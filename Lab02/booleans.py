@@ -1,7 +1,8 @@
+#Booleans
 #example1
-print(10 > 9)
-print(10 == 9)
-print(10 < 9)
+print(10 > 9)  #True
+print(10 == 9) #False
+print(10 < 9)  #False
 
 #example2
 a=200
@@ -12,8 +13,8 @@ else:
     print("b is not greater than a")
 
 #example3
-print(bool("Hello"))
-print(bool(15))
+print(bool("Hello")) #True
+print(bool(15)) #True
 
 #example4
 x="hello"
@@ -22,18 +23,18 @@ print(bool(x))
 print(bool(y))
 
 #example5
-bool("abc")
-bool(123)
-bool(["apple", "cherry", "banana"])
+bool("abc") #True
+bool(123) #True
+bool(["apple", "cherry", "banana"]) #True
 
 #example6
-bool(False)
-bool(None)
-bool(0)
-bool("")
-bool(())
-bool([])
-bool({})
+bool(False) #False
+bool(None) #False
+bool(0) #False
+bool("") #False
+bool(()) #False
+bool([]) #False
+bool({}) #False
 
 #example7
 class myclass():
