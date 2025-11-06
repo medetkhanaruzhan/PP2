@@ -3,8 +3,8 @@ from pygame.locals import *
 
 pygame.init()
 
-WIDTH, HEIGHT = 400, 400
-CELL = 20
+WIDTH, HEIGHT = 440, 440
+CELL = 24
 FPS = 10
 
 GREEN = (0, 255, 0)
@@ -12,23 +12,22 @@ RED   = (255, 0, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-score = 0
+points = 0
 level = 1
 speed = 10
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Snake Game")
+pygame.display.set_caption("nostalgia")
 
 font_big = pygame.font.SysFont("Verdana", 40)
 font_small = pygame.font.SysFont("Verdana", 18)
-game_over = font_big.render("Game Over", True, RED)
+game_over = font_big.render("Вы проиграли :(", True, RED)
 
 clock = pygame.time.Clock()
 
-
 class Snake:
     def __init__(self):
-        self.body = [(100, 100), (80, 100), (60, 100)]
+        self.body = [(120, 120), (96, 120), (72, 120)]
         self.direction = "RIGHT"
 
     def move(self):
@@ -96,7 +95,7 @@ while True:
 
     if snake.hit_wall_or_self():
         screen.fill(BLACK)
-        screen.blit(game_over, (80, 150))
+        screen.blit(game_over, (88, 140))
         pygame.display.update()
         time.sleep(2)
         pygame.quit()
@@ -118,7 +117,7 @@ while True:
     score_text = font_small.render("Score: " + str(score), True, WHITE)
     level_text = font_small.render("Level: " + str(level), True, WHITE)
     screen.blit(score_text, (10, 10))
-    screen.blit(level_text, (310, 10))
+    screen.blit(level_text, (370, 10))
 
     pygame.display.update()
     clock.tick(speed)
